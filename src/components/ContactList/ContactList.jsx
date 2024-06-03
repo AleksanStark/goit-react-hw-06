@@ -10,12 +10,13 @@ const ContactList = () => {
   const filteredContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(inputValue.toLowerCase())
   );
-  const checkFilteredArray =
+
+  const checkFilteredContacts =
     filteredContacts.length > 0 ? filteredContacts : contacts;
 
   return (
     <ul className={css.contact_list}>
-      {checkFilteredArray.map((contact) => (
+      {checkFilteredContacts.map((contact) => (
         <li key={contact.id}>
           <Contact contact={contact} />
         </li>

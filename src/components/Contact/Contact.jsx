@@ -2,7 +2,7 @@ import { BsPersonFill } from "react-icons/bs";
 import { FaPhoneAlt } from "react-icons/fa";
 import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactSlice";
+import { deleteContact } from "../../redux/contactsSlice";
 const Contact = ({ contact: { id, name, number } }) => {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
@@ -17,7 +17,7 @@ const Contact = ({ contact: { id, name, number } }) => {
         <FaPhoneAlt className={css.phone_icon} size={16} />
         <span>{number}</span>
       </div>
-      <button className={css.button_delete} onClick={() => handleDelete()}>
+      <button className={css.button_delete} onClick={handleDelete}>
         Delete
       </button>
     </div>
